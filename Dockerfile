@@ -47,10 +47,7 @@ COPY . /app/
 # Este comando se ejecuta al iniciar el contenedor.
 # Ejecuta el reseteo, migraciones, seeders y finalmente inicia el servidor Gunicorn.
 # (Asegúrate que 'smartsales' sea el nombre de tu carpeta de configuración de Django)
-CMD python manage.py reset_all_data && \
-    python manage.py migrate --noinput && \
-    python manage.py seed_users_data && \
-    python manage.py seed_products_data && \
-    python manage.py seed_ml && \
-    python train_models.py && \
+# Dockerfile (Sección CMD) - SOLO MIGRAR E INICIAR
+
+CMD python manage.py migrate --noinput && \
     gunicorn smartsales.wsgi -b 0.0.0.0:$PORT
