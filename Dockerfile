@@ -31,6 +31,11 @@ COPY . /app/
 
 # 5. COMANDO DE INICIO (CMD)
 # Ejecuta migración, colecta estáticos, y finalmente inicia el servidor.
-CMD python manage.py migrate --noinput && \
+CMD python manage.py reset_all_data && \
+    python manage.py migrate --noinput && \
     python manage.py collectstatic --noinput && \
+    python manage.py seed_users_data && \
+    python manage.py seed_products_data && \
+    python manage.py seed_ml && \
+    python train_models.py && \
     gunicorn smartsales.wsgi -b 0.0.0.0:$PORT
