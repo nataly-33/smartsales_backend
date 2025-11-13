@@ -1,0 +1,7 @@
+# sucursales/apps.py
+from django.apps import AppConfig
+
+
+class SucursalesConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'sucursales'
