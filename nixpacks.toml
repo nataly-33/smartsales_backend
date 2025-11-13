@@ -1,15 +1,12 @@
-# nixpacks.toml
-
 [phases.setup]
-# Estas son las dependencias que necesita WeasyPrint para funcionar
-aptPackages = [
-    "libcairo2",
-    "libpango-1.0-0",
-    "libpangocairo-1.0-0",
-    "libgdk-pixbuf2.0-0",
-    "libgirepository-1.0-1",
-    "libxml2-dev",
-    "libjpeg-dev",
-    "libfontconfig1-dev",
-    "libgobject-2.0-0",
+nixPkgs = [
+    "cairo",
+    "pango",
+    "libxml2",
+    "libxslt",
+    "libffi",
+    "gobject-introspection",
+    "gdk-pixbuf",
+    "fontconfig",
+    "glib",
 ]
